@@ -28,8 +28,13 @@ Une sous arborescence sera alors crée dans le dossier NOM_Prenom:
 
 ![image](https://user-images.githubusercontent.com/39738426/149919815-6c4278c2-08ac-47f4-9930-98d9dfbfb4ac.png)
 
-L'échange de l'information est le socle des civilisations humaines, encore faut il qu'elles se comprennent et aujourd'hui que les machines nous comprennent.
-L'inrae, comme l'ensemble de la recherche française, sous l'impulsion de l'agenda Européen H2020, cherche à rendre ses données Trouvable, Accessible, Interopérables et réutilisable. ce [lien](https://datapartage.inrae.fr/Produire-des-donnees-FAIR) décrit l adémarche mise en peuvre.
+L'échange de l'information est le socle des civilisations humaines, encore faut il que celles-ci se comprennent et aujourd'hui que les machines nous comprennent.
+
+Dans cet optique, l'inrae, comme l'ensemble des acteurs de la recherche française, sous l'impulsion de l'agenda Européen H2020, cherche à rendre ses données 
+
+Trouvable, Accessible, Interopérables et réutilisable. 
+
+Cette démarche déborde certainement le cadre de votre stage, mais ces informations sont certainement utiles pour votre culture générale. Ce [lien](https://datapartage.inrae.fr/Produire-des-donnees-FAIR) décrit la démarche mise en oeuvre dans le cadre de l'horizon H2020.
 
 Enfin, cette petite vidéo décrit une situation encore bien trop courante dans le monde de la biologie (et surement ailleurs !!)
 
