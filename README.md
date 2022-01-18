@@ -30,9 +30,7 @@ Une sous arborescence sera alors crée dans le dossier NOM_Prenom:
 
 L'échange de l'information est le socle des civilisations humaines, encore faut il que celles-ci se comprennent et aujourd'hui que les machines nous comprennent.
 
-Dans cet optique, l'inrae, comme l'ensemble des acteurs de la recherche française, sous l'impulsion de l'agenda Européen H2020, cherche à rendre ses données 
-
-Trouvable, Accessible, Interopérables et réutilisable. 
+Dans cet optique, l'inrae, comme l'ensemble des acteurs de la recherche française, sous l'impulsion de l'agenda Européen H2020, cherche à rendre ses données **Trouvable**, **Accessible**, **Interopérables** et **réutilisable**. 
 
 Cette démarche déborde certainement le cadre de votre stage, mais ces informations sont certainement utiles pour votre culture générale. Ce [lien](https://datapartage.inrae.fr/Produire-des-donnees-FAIR) décrit la démarche mise en oeuvre dans le cadre de l'horizon H2020.
 
