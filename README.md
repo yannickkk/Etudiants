@@ -12,4 +12,9 @@ La procédure **CEFS_mode_opératoire_connection_client_SGBDR_V01.docx** expliqu
 
 2- structure votre travail:
 
-[![Watch the video](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)](https://www.youtube.com/embed/N2zK3sAtr-4)
+[![Watch the video](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)](https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg)
+
+
+https://youtu.be/N2zK3sAtr-4
+
+https://youtu.be/66oNv_DJuPc
