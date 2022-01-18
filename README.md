@@ -17,9 +17,7 @@ SAE2
 
 Cette petite vidéo décrit une situation encore bien trop courante dans le monde de la biologie (et surement ailleurs !!)
 
-[![Regarder la vidéo](https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg)](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
-[<img src="https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
-66oNv_DJuPc
 
-https://youtu.be/66oNv_DJuPc
+[<img src="https://img.youtube.com/vi/66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
+
