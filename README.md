@@ -18,7 +18,7 @@ Vous pouvez lire avec profit, le document du département Inra SAE2
 
 Nous vous demandons de structurer vos données à l'aide de l'outil décrit dans le précédent document.
 
-Pour cela, copier coller le text contenu [ici] (https://github.com/yannickkk/Etudiants/blob/main/CreateArborescence.bat) dans un éditeur de texte (notepad++ ou blocnote mais pas word ou openoffice). Enregistrer ensuite le fichier ou vous le désirez sur votre ordinateur en lui donnat l'extension **.bat** de façon à le rendre excécutable. Double cliquer dessus, vous pouvez alors créer un répertoire (par exemple NOM_Prenom de vous même avec cette casse).
+Pour cela, copier coller le text contenu [ici](https://github.com/yannickkk/Etudiants/blob/main/CreateArborescence.bat) dans un éditeur de texte (notepad++ ou blocnote mais pas word ou openoffice). Enregistrer ensuite le fichier ou vous le désirez sur votre ordinateur en lui donnat l'extension **.bat** de façon à le rendre excécutable. Double cliquer dessus, vous pouvez alors créer un répertoire (par exemple NOM_Prenom de vous même avec cette casse).
 Une sous arborescence sera alors crée dans le dossier NOM_Prenom:
 
 ![image](https://user-images.githubusercontent.com/39738426/149919815-6c4278c2-08ac-47f4-9930-98d9dfbfb4ac.png)
