@@ -12,13 +12,11 @@ La procédure **CEFS_mode_opératoire_connection_client_SGBDR_V01.docx** expliqu
 
 2- structurer votre travail:
 
+Vous pouvez lire avec profit, le document du département Inra SAE2
 
-SAE2
+2012_12_21_Demarche_Qualite_Gestion_Prep_Donnees.pdf
 
 Cette petite vidéo décrit une situation encore bien trop courante dans le monde de la biologie (et surement ailleurs !!)
 
-![image](https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png)
-
-
-[<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="50%">](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
+[<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="80%">](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
