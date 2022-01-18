@@ -10,7 +10,7 @@ Cette documentation à pour but de vous expliquer comment vous connecter aux bas
 
 La procédure **CEFS_mode_opératoire_connection_client_SGBDR_V01.docx** explique comment se connecter aux bases de données client-serveur de l'unité. Double cliqué dessus et appuyez sur View Raw pour l'afficher.
 
-2- structure votre travail:
+2- structurer votre travail:
 
 
 SAE2
@@ -19,3 +19,4 @@ Cette petite vidéo décrit une situation encore bien trop courante dans le mond
 
 [![Regarder la vidéo](https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg)](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
+[<img src="https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg" width="50%">](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
