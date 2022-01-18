@@ -28,6 +28,9 @@ Une sous arborescence sera alors crée dans le dossier NOM_Prenom:
 
 ![image](https://user-images.githubusercontent.com/39738426/149919815-6c4278c2-08ac-47f4-9930-98d9dfbfb4ac.png)
 
+L'échange de l'information est le socle des civilisations humaines, encore faut il qu'elles se comprennent et aujourd'hui que les machines nous comprennent.
+L'inrae, comme l'ensemble de la recherche française, sous l'impulsion de l'agenda Européen H2020, cherche à rendre ses données Trouvable, Accessible, Interopérables et réutilisable. ce [lien](https://datapartage.inrae.fr/Produire-des-donnees-FAIR) décrit l adémarche mise en peuvre.
+
 Enfin, cette petite vidéo décrit une situation encore bien trop courante dans le monde de la biologie (et surement ailleurs !!)
 
 [<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="80%" center = TRUE>](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
