@@ -39,4 +39,5 @@ Enfin, cette petite vidéo décrit une situation encore bien trop courante dans 
 [<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="80%" center = TRUE>](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
 Bon stage et à bintôt.
+
 Yannick
