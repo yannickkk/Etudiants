@@ -13,5 +13,9 @@ La procédure **CEFS_mode_opératoire_connection_client_SGBDR_V01.docx** expliqu
 2- structure votre travail:
 
 
+SAE2
+
+Cette petite vidéo décrit une situation encore bien trop courante dans le monde de la biologie (et surement ailleurs !!)
+
 [![Regarder la vidéo](https://img.youtube.com/vi/66oNv_DJuPc/maxresdefault.jpg)](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
