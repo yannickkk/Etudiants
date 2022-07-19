@@ -6,11 +6,11 @@ Vous venez d'arriver au CEFS pour faire votre stage, je vous souhaite un bon sé
 
 Cette documentation à pour but de vous expliquer:
 
-1 comment vous connecter aux bases de donnée du CEFS
+1. comment vous connecter aux bases de donnée du CEFS
 
-2 comment structurer votre arborescence de travail afin de rendre, à l'issu de votre stage, un dossier structuré, compréhensible et des analyses répétables
+2. comment structurer votre arborescence de travail afin de rendre, à l'issu de votre stage, un dossier structuré, compréhensible et des analyses répétables
 
-3 comment archiver cela sur l'espace de stockage capacitif du CEFS
+3. comment archiver cela sur l'espace de stockage capacitif du CEFS
 
 ## 1- Vous connecter au bases de données:
 
