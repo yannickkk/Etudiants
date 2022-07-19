@@ -1,4 +1,4 @@
-# Etudiants
+# Note importante pour les étudiants du CEFS
 
 Bonjour,
 
