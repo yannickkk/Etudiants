@@ -38,6 +38,13 @@ Enfin, cette petite vidéo décrit une situation encore bien trop courante dans 
 
 [<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="80%" center = TRUE>](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
+## 2- Archiver votre travail:
+
+Une fois votre stage terminé, votre travail doit être archivé sur l'espace de stockage capacitif du CEFS. Pour cela suivez la procédure décrite ici (ldap obligatoire):
+
+https://sites.inrae.fr/site/cefs/UNITE_UR0035/Qualite/Manuel_Qualite_CEFS/_layouts/15/WopiFrame.aspx?sourcedoc=/site/cefs/UNITE_UR0035/Qualite/Manuel_Qualite_CEFS/Documents%20partages/Protocoles_valid%C3%A9s/S3/CEFS_connexion_stockage_capacitif_S3_V01.docx&action=default
+
+
 Bon stage et à bientôt.
 
 Yannick
