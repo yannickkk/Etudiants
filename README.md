@@ -14,7 +14,7 @@ Cette documentation à pour but de vous expliquer:
 
 ## 1- Vous connecter au bases de données:
 
-La procédure [CEFS_mode_opératoire_connection_client_SGBDR_V01.docx](https://github.com/yannickkk/Etudiants/blob/main/CEFS_mode_op%C3%A9ratoire_connection_client_SGBDR_V01.docx) explique comment se connecter aux bases de données client-serveur de l'unité. Double cliqué dessus et appuyez sur View Raw pour l'afficher.
+La procédure [CEFS_mode_opératoire_connection_client_SGBDR_V01.docx](https://github.com/yannickkk/Etudiants/blob/main/CEFS_mode_op%C3%A9ratoire_connection_client_SGBDR_V02.docx) explique comment se connecter aux bases de données client-serveur de l'unité. Double cliqué dessus et appuyez sur View Raw pour l'afficher.
 
 ## 2- structurer votre travail:
 
