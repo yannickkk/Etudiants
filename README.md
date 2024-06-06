@@ -12,6 +12,9 @@ Cette documentation à pour but de vous expliquer:
 
 3. comment archiver cela sur l'espace de stockage capacitif du CEFS
 
+Et un petit cadeau, comme vous travaillez peut être sur le chevreuil européen, voici un petit rappel des éléments de base base de sa biologie:
+[cours chevreuil MFR.pdf](https://sites.inrae.fr/site/cefs/UNITE_UR0035/Qualite/Documents%20partages/cours%20chevreuil%20MFR.pdf?d=w228a809f63454917859283f256ccc058)
+
 ## 1- Vous connecter au bases de données:
 
 La procédure [CEFS_mode_opératoire_connection_client_SGBDR_V02.docx](https://github.com/yannickkk/Etudiants/blob/main/CEFS_mode_op%C3%A9ratoire_connection_client_SGBDR_V02.docx) explique comment se connecter aux bases de données client-serveur de l'unité. Double cliqué dessus et appuyez sur View Raw pour l'afficher.
