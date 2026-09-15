@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion sécurisée des mots de passe en R avec keyring</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --border: #e5e3dc;
+    --text: #2c2c2a;
+    --text-secondary: #5f5e5a;
+    --accent: #185fa5;
+    --accent-bg: #e6f1fb;
+    --warning-bg: #faeeda;
+    --warning-border: #ba7517;
+    --warning-text: #633806;
+    --success-bg: #e1f5ee;
+    --success-text: #0f6e56;
+    --code-bg: #f1efe8;
+    --code-text: #26215c;
+    --danger-bg: #fcebeb;
+    --danger-text: #a32d2d;
+    --radius: 8px;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --surface: #252523;
+      --border: #3a3a37;
+      --text: #e8e6df;
+      --text-secondary: #a8a6a0;
+      --accent: #85b7eb;
+      --accent-bg: #0c447c;
+      --warning-bg: #633806;
+      --warning-text: #fac775;
+      --success-bg: #085041;
+      --success-text: #9fe1cb;
+      --code-bg: #2f2f2c;
+      --code-text: #cecbf6;
+      --danger-bg: #501313;
+      --danger-text: #f09595;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+    font-size: 16px;
+  }
+  header {
+    border-bottom: 0.5px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin: 0;
+  }
+  p { margin: 0.75rem 0; }
+  code {
+    font-family: var(--mono);
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  pre {
+    background: var(--code-bg);
+    color: var(--text);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    line-height: 1.6;
+    border: 0.5px solid var(--border);
+    margin: 1rem 0;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+  .cmt { color: var(--text-secondary); font-style: italic; }
+  .str { color: #0f6e56; }
+  .fn { color: #534ab7; }
+  .kw { color: #a32d2d; }
+  @media (prefers-color-scheme: dark) {
+    .cmt { color: #888780; }
+    .str { color: #9fe1cb; }
+    .fn { color: #afa9ec; }
+    .kw { color: #f09595; }
+  }
+  .callout {
+    border-radius: var(--radius);
+    padding: 0.85rem 1.1rem;
+    margin: 1.25rem 0;
+    border-left: 3px solid;
+    font-size: 14.5px;
+  }
+  .callout.info {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
+  .callout.warn {
+    background: var(--warning-bg);
+    border-color: var(--warning-border);
+    color: var(--warning-text);
+  }
+  .callout.danger {
+    background: var(--danger-bg);
+    border-color: var(--danger-text);
+    color: var(--danger-text);
+  }
+  .callout.ok {
+    background: var(--success-bg);
+    border-color: var(--success-text);
+    color: var(--success-text);
+  }
+  .callout strong { font-weight: 500; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  th {
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--code-bg);
+  }
+  ul, ol { padding-left: 1.4rem; }
+  li { margin: 0.35rem 0; }
+  .toc {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .toc ul { margin: 0.25rem 0; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .toc a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 0.5px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Gestion sécurisée des mots de passe en R avec <code>keyring</code></h1>
+  <p class="subtitle">Petit guide pratique — stockage, récupération, et intégration SMTP</p>
+</header>
+
+<div class="toc">
+  <strong>Sommaire</strong>
+  <ul>
+    <li><a href="#pourquoi">1. Pourquoi keyring ?</a></li>
+    <li><a href="#install">2. Installation</a></li>
+    <li><a href="#concepts">3. Concepts : service, username, keyring</a></li>
+    <li><a href="#usage">4. Utilisation courante</a></li>
+    <li><a href="#backends">5. Backends selon l'OS</a></li>
+    <li><a href="#smtp">6. Cas concret : SMTP avec blastula</a></li>
+    <li><a href="#bonnes-pratiques">7. Bonnes pratiques</a></li>
+    <li><a href="#depannage">8. Dépannage</a></li>
+  </ul>
+</div>
+
+<h2 id="pourquoi">1. Pourquoi keyring ?</h2>
+
+<p>
+Le package <code>keyring</code> permet de stocker mots de passe, tokens API et autres secrets
+dans le <strong>gestionnaire natif de l'OS</strong> plutôt qu'en clair dans un script ou un
+fichier <code>.Renviron</code>. Les secrets sont chiffrés par le système et protégés par la
+session utilisateur.
+</p>
+
+<div class="callout danger">
+<strong>À ne jamais faire :</br>
+</strong>  - envoyer par mail un message d'erreur postgresql contenant vos identifiants (supprimer les informations confidentielles avant d'envoyer le message). ça oblige l'administrateur à supprimer le compte et à le recréer et ça le met de mauvaise humeur</br>
+</strong>  - écrire <code>password = "monMdp123"</code> en dur dans un script R (ou n'importe quel fichier destiné à être échangé), les login et password doivent être ABSOLUMENT personnels</br>
+</strong>  - écrire <code>password = "monMdp123"</code> en dur dans un script R versionné sur Git. Un secret poussé sur un dépôt reste dans l'historique même après suppression.
+</div>
+
+<h3>Comparaison rapide</h3>
+<table>
+  <thead>
+    <tr><th>Méthode</th><th>Sécurité</th><th>Portabilité</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>En dur dans le script</td><td>❌ Nulle</td><td>✅</td></tr>
+    <tr><td>Variable <code>.Renviron</code></td><td>⚠️ Fichier en clair</td><td>✅</td></tr>
+    <tr><td><code>keyring</code></td><td>✅ Chiffré par l'OS</td><td>⚠️ Par machine/utilisateur</td></tr>
+    <tr><td>Coffre-fort externe (Vault, etc.)</td><td>✅✅</td><td>✅ mais lourd</td></tr>
+  </tbody>
+</table>
+
+<h2 id="install">2. Installation</h2>
+
+<pre><code><span class="fn">install.packages</span>(<span class="str">"keyring"</span>)
+<span class="fn">library</span>(keyring)</code></pre>
+
+<p>
+Sous Linux, un backend Secret Service (GNOME Keyring, KDE Wallet…) doit être disponible ; sur
+une VM headless (serveur INRAE par exemple), voir la section <a href="#backends">Backends</a>.
+</p>
+
+<h2 id="concepts">3. Concepts : service, username, keyring</h2>
+
+<p>Un secret est identifié par deux clés :</p>
+<ul>
+  <li><code>service</code> — nom logique du service (ex. <code>"smtp"</code>, <code>"argo_api"</code>, <code>"db_homer"</code>)</li>
+  <li><code>username</code> — identifiant associé (ex. votre adresse mail, un login)</li>
+</ul>
+
+<p>
+Un <code>keyring</code> (au singulier, dans le vocabulaire du package) est un trousseau — un
+conteneur qui regroupe plusieurs secrets. Par défaut, keyring utilise le trousseau de la
+session utilisateur, ce qui suffit dans la majorité des cas.
+</p>
+
+<h2 id="usage">4. Utilisation courante</h2>
+
+<h3>Stocker un mot de passe (une seule fois, en interactif)</h3>
+
+<pre><code><span class="fn">library</span>(keyring)
+
+<span class="cmt"># Ouvre une fenêtre de saisie sécurisée — le mdp n'apparaît pas dans l'historique</span>
+key_set(service = <span class="str">"smtp"</span>, username = <span class="str">"ricky@anthropic.com"</span>)</code></pre>
+
+<div class="callout info">
+<code>key_set()</code> ouvre un prompt masqué : le mot de passe n'est ni tapé dans la console,
+ni conservé dans <code>.Rhistory</code>.
+</div>
+
+<h3>Récupérer un mot de passe dans un script</h3>
+
+<pre><code>mdp &lt;- key_get(service = <span class="str">"smtp"</span>, username = <span class="str">"ricky@anthropic.com"</span>)</code></pre>
+
+<h3>Lister les secrets enregistrés</h3>
+
+<pre><code>key_list()
+key_list(service = <span class="str">"smtp"</span>)  <span class="cmt"># filtré</span></code></pre>
+
+<h3>Supprimer un secret</h3>
+
+<pre><code>key_delete(service = <span class="str">"smtp"</span>, username = <span class="str">"ricky@anthropic.com"</span>)</code></pre>
+
+<h3>Stocker un mot de passe en mode non-interactif (scripts automatisés)</h3>
+
+<pre><code><span class="cmt"># À éviter en production, mais utile pour un déploiement scripté</span>
+key_set_with_value(
+  service  = <span class="str">"smtp"</span>,
+  username = <span class="str">"ricky@anthropic.com"</span>,
+  password = <span class="fn">Sys.getenv</span>(<span class="str">"SMTP_PWD"</span>)  <span class="cmt"># variable d'env temporaire</span>
+)</code></pre>
+
+<h2 id="backends">5. Backends selon l'OS</h2>
+
+<table>
+  <thead>
+    <tr><th>OS</th><th>Backend par défaut</th><th>Remarques</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>macOS</td><td>Keychain</td><td>Fonctionne immédiatement</td></tr>
+    <tr><td>Windows</td><td>Credential Store</td><td>Fonctionne immédiatement</td></tr>
+    <tr><td>Linux desktop</td><td>Secret Service (GNOME/KDE)</td><td>Nécessite un service <code>dbus</code> actif</td></tr>
+    <tr><td>Linux serveur / VM headless</td><td>—</td><td>Utiliser <code>backend_file</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Sur une VM sans environnement graphique</h3>
+
+<pre><code><span class="cmt"># Backend basé sur un fichier chiffré, protégé par une passphrase</span>
+kb &lt;- <span class="fn">keyring::backend_file</span>$new()
+kb$keyring_create(<span class="str">"homer"</span>)         <span class="cmt"># crée un trousseau nommé "homer"</span>
+kb$set(<span class="str">"smtp"</span>, <span class="str">"ricky@anthropic.com"</span>)
+mdp &lt;- kb$get(<span class="str">"smtp"</span>, <span class="str">"ricky@anthropic.com"</span>)</code></pre>
+
+<div class="callout warn">
+<strong>Attention VM :</strong> avec <code>backend_file</code>, la passphrase du trousseau doit
+être fournie au moins une fois par session. Pour un cron entièrement non-attendu, il faut
+alors passer par une variable d'environnement injectée par le système d'orchestration (systemd,
+Ansible Vault…).
+</div>
+
+<h2 id="bonnes-pratiques">6. Bonnes pratiques</h2>
+
+<ul>
+  <li>Ne jamais commiter de mot de passe, ni dans un script, ni dans <code>.Renviron</code>, ni dans un YAML.</li>
+  <li>Ajouter <code>.Renviron</code> et <code>.Rhistory</code> au <code>.gitignore</code> du projet.</li>
+  <li>Nommer les services de façon parlante : <code>"argo_api"</code>, <code>"smtp_inrae"</code>, <code>"db_homer_prod"</code>.</li>
+  <li>Documenter dans le README les <code>service</code>/<code>username</code> attendus pour que le pipeline se remonte facilement.</li>
+  <li>Pour du multi-utilisateur sur un serveur partagé, préférer un backend fichier chiffré par projet plutôt que le trousseau système personnel.</li>
+  <li>Faire tourner les secrets régulièrement (<code>key_delete()</code> puis <code>key_set()</code>).</li>
+</ul>
+
+<h2 id="depannage">7. Dépannage</h2>
+
+<h3>Erreur : <code>Error in b_dbus_get: Cannot open keyring</code> (Linux)</h3>
+<p>
+Le service Secret Service n'est pas disponible (VM sans session graphique). Basculer sur
+<code>backend_file</code> ou installer <code>gnome-keyring</code> + <code>dbus</code>.
+</p>
+
+<h3>Le mot de passe est demandé à chaque session</h3>
+<p>
+Le trousseau se ferme automatiquement selon la politique OS. Sur macOS/Windows c'est très
+rare ; sur Linux, vérifier que le trousseau est bien déverrouillé au login.
+</p>
+
+<h3>Vérifier qu'un secret existe sans le lire</h3>
+<pre><code><span class="fn">nrow</span>(<span class="fn">key_list</span>(service = <span class="str">"smtp"</span>)) &gt; 0</code></pre>
+
+<footer>
+  Documentation officielle du package : <code>?keyring</code> ou <a href="https://keyring.r-lib.org/">keyring.r-lib.org</a>.
+</footer>
+
+</body>
+</html>
