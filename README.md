@@ -19,7 +19,12 @@ J'y ajoute un petit bonus, comme vous travaillez peut être sur le chevreuil eur
 
 La procédure [CEFS_mode_opératoire_connection_client_SGBDR_V03.docx](https://github.com/yannickkk/Etudiants/blob/main/CEFS_mode_op%C3%A9ratoire_connection_client_SGBDR_V03.docx) explique comment se connecter aux bases de données client-serveur de l'unité. Double cliqué dessus et appuyez sur View Raw pour l'afficher.
 
-## 2- structurer votre travail:
+## 2- Gérer les mots de passe:
+
+La sécurité devient un point de plus en plus critique dans nos infrastructures numérique. En vous donnant un accès à nos données, nous exposons celles-ci a des actes malveillants si les utilisateurs de leur côté ne font pas preuve de la plus grande prudence.
+Vous travaillez généralement avec R qui possède un package R{keyring} prévu à cet effet. Il permet en effet de crypter les mots de passes et de en pas les laisser en clair sur votre machine. La documentation [utilisation de keyring](https://github.com/yannickkk/Etudiants/blob/main/keyring_doc.html) vous permet d'apprendre à gérer vos identifiants de façon sécurisée.
+
+## 3- structurer votre travail:
 
 Vous pouvez lire avec profit, le document du département Inra SAE2. Ce document est un peut vieux mais très intéressant.
 
@@ -47,7 +52,7 @@ Enfin, cette petite vidéo décrit une situation encore bien trop courante dans 
 
 [<img src="https://user-images.githubusercontent.com/39738426/149916864-202ba852-826b-4206-b6c0-514f959c8ec1.png" width="80%" center = TRUE>](https://www.youtube.com/watch?v=66oNv_DJuPc&ab_channel=NYUHealthSciencesLibrary)
 
-## 3- Archiver votre travail:
+## 4- Archiver votre travail:
 
 Une fois votre stage terminé, votre travail doit être archivé sur l'espace de stockage capacitif du CEFS. Pour cela suivez la procédure décrite ici (ldap obligatoire):
 [CEFS_connexion_stockage_capacitif_S3_V01.docx](https://sites.inrae.fr/site/cefs/UNITE_UR0035/Qualite/Manuel_Qualite_CEFS/_layouts/15/WopiFrame.aspx?sourcedoc=/site/cefs/UNITE_UR0035/Qualite/Manuel_Qualite_CEFS/Documents%20partages/Protocoles_valid%C3%A9s/S3/CEFS_connexion_stockage_capacitif_S3_V01.docx&action=default)
