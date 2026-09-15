@@ -22,7 +22,7 @@ La procédure [CEFS_mode_opératoire_connection_client_SGBDR_V03.docx](https://g
 ## 2- Gérer les mots de passe:
 
 La sécurité devient un point de plus en plus critique dans nos infrastructures numérique. En vous donnant un accès à nos données, nous exposons celles-ci a des actes malveillants si les utilisateurs de leur côté ne font pas preuve de la plus grande prudence.
-Vous travaillez généralement avec R qui possède un package R{keyring} prévu à cet effet. Il permet en effet de crypter les mots de passes et de en pas les laisser en clair sur votre machine. La documentation [utilisation de keyring](https://github.com/yannickkk/Etudiants/blob/main/keyring_doc.html) vous permet d'apprendre à gérer vos identifiants de façon sécurisée.
+Vous travaillez généralement avec R qui possède un package R{keyring} prévu à cet effet. Il permet en effet de crypter les mots de passes et de en pas les laisser en clair sur votre machine. La documentation [utilisation de keyring](https://github.com/yannickkk/Etudiants/blob/main/keyring_doc.md) vous permet d'apprendre à gérer vos identifiants de façon sécurisée.
 
 ## 3- structurer votre travail:
 
