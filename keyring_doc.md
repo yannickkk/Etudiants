@@ -56,7 +56,8 @@ Un `keyring` (au singulier, dans le vocabulaire du package) est un trousseau —
 library(keyring)
 
 # Ouvre une fenêtre de saisie sécurisée — le mdp n'apparaît pas dans l'historique
-key_set(service = "smtp", username = "ricky@anthropic.com")
+# db_xxxx est le nom d'une base de données et pnom le login (première lettre du prénom et nom accolé)
+key_set(service = "db_xxxx", username = "pnom")
 ```
 
 > ℹ️ `key_set()` ouvre un prompt masqué : le mot de passe n'est ni tapé dans la console, ni conservé dans `.Rhistory`.
@@ -64,20 +65,20 @@ key_set(service = "smtp", username = "ricky@anthropic.com")
 ### Récupérer un mot de passe dans un script
 
 ```r
-mdp <- key_get(service = "smtp", username = "ricky@anthropic.com")
+mdp <- key_get(service = "db_xxxx", username = "pnom")
 ```
 
 ### Lister les secrets enregistrés
 
 ```r
 key_list()
-key_list(service = "smtp")  # filtré
+key_list(service = "db_xxxx")  # filtré
 ```
 
 ### Supprimer un secret
 
 ```r
-key_delete(service = "smtp", username = "ricky@anthropic.com")
+key_delete(service = "db_xxxx", username = "pnom")
 ```
 
 ### Stocker un mot de passe en mode non-interactif (scripts automatisés)
