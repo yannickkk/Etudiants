@@ -55,30 +55,68 @@ Un `keyring` (au singulier, dans le vocabulaire du package) est un trousseau —
 ```r
 library(keyring)
 
+#Créer votre trousseau avec keyring
+
+keyring::keyring_create("mon_nom")
+
 # Ouvre une fenêtre de saisie sécurisée — le mdp n'apparaît pas dans l'historique
-# db_xxxx est le nom d'une base de données et pnom le login (première lettre du prénom et nom accolé)
-key_set(service = "db_xxxx", username = "pnom")
+####un mot de passe sécurisant le trousseau est demandé (le mot de passe maître), entrez votre mot de passe de ldap. Keyring crypte le trousseau.
+
+####Puis on stocke les identifiants de connection à la base (ou aux bases) de données à laquelle on peut accéder.
+
+#user/login
+ keyring::key_set_with_value(
+   service  = "db", #le nom du service associé au identifiants
+   username = "login", # l'identifiant associé à ce que l'on veut garder secret (ici le login)
+   password = "mon_login", # votre login/user
+   keyring  = "mon_nom" #le nom du trousseau de clefs
+ )
+ 
+#password 
+ keyring::key_set_with_value(
+   service  = "db", #le nom du service associé au identifiants
+   username = "pwd", # l'identifiant associé à ce que l'on veut garder secret (ici le mot de passe)
+   password = "mon_pwd", # votre mot de passe
+   keyring  = "mon_nom" #le nom du trousseau de clefs
+ )
+ 
+#host 
+  keyring::key_set_with_value(
+   service  = "db", # Le nom du service associé au identifiants
+   username = "host", # L'identifiant associé à ce que l'on veut garder secret (ici le nom de l'hôte)
+   password = "nom de l'hôte (serveur distant)", # Le nom du serveur qui héberge la base de données
+   keyring  = "mon_nom" # Le nom du trousseau de clefs 
+ )
+ 
+#nom de la base de données 
+   keyring::key_set_with_value(
+   service  = "db", # Le nom du service associé au identifiants
+   username = "base de données chevreuils", # L'identifiant associé à ce que l'on veut garder secret (ici le nom de la base de données)
+   password = "nom de la base de données", # Le nom de la base de données
+   keyring  = "mon_nom" # Le nom du trousseau de clefs 
+ )
+ 
 ```
 
-> ℹ️ `key_set()` ouvre un prompt masqué : le mot de passe n'est ni tapé dans la console, ni conservé dans `.Rhistory`.
+> ℹ️ `keyring_create()` ouvre un prompt masqué : le mot de passe n'est ni tapé dans la console, ni conservé dans `.Rhistory`.
 
 ### Récupérer un mot de passe dans un script
 
 ```r
-mdp <- key_get(service = "db_xxxx", username = "pnom")
+mdp <- key_get(service="db","pwd",keyring ="mon_nom")
 ```
 
 ### Lister les secrets enregistrés
 
 ```r
 key_list()
-key_list(service = "db_xxxx")  # filtré
+key_list(service = "db")  # filtré
 ```
 
 ### Supprimer un secret
 
 ```r
-key_delete(service = "db_xxxx", username = "pnom")
+key_delete(service = "db", username = "pwd")
 ```
 
 ### Stocker un mot de passe en mode non-interactif (scripts automatisés)
