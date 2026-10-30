@@ -97,15 +97,19 @@ keyring::keyring_create("mon_nom")
  )
  
 ```
+#####les lignes de commandes ci-dessus sont excécutées une seule fois puis suppimées
 
 > ℹ️ `keyring_create()` ouvre un prompt masqué : le mot de passe n'est ni tapé dans la console, ni conservé dans `.Rhistory`.
 
 ### Récupérer un mot de passe dans un script
-
 ```r
 mdp <- key_get(service="db","pwd",keyring ="mon_nom")
 ```
+#####Ce qui donne pour une connection à une base de données  
 
+```r
+con<-dbConnect(Postgres(), host=key_get(service="db","host",keyring ="pwd"), dbname=key_get(service="db","base de données chavreuils",keyring ="pwd"), user=key_get(service="db","login",keyring ="pwd"), password=key_get(service="db","pwd",keyring ="pwd"))
+```
 ### Lister les secrets enregistrés
 
 ```r
